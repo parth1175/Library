@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @todo_list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @todo_list.description %>
+</p>
+
+<div id="todo_items_wrapper">
+  <%= render @todo_list.todo_items %>
+  <!-- @todo_list is already declared before the action of show in the TodoItemsController
+      It is the object inside of the TodoList table, we basically we are going within that table
+      and grabbing the todo_list object before the show action and then here we are rendering the table
+ -->
+
+ <!-- Im just a bit confused here, because a table was directly rendered -->
+
+ <!-- todo_items was a partial, but how did we get to it? -->
+ <p style = "font-size: 200%;"><strong> This is a gap</strong></p>
+  <div id="form">
+    <%= render "todo_items/form" %>
+  </div>
+</div>
+
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Back', todo_lists_path %>

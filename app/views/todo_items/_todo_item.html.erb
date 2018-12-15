@@ -1,0 +1,6 @@
+<p><%= todo_item.content %> </p>
+<%= link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: {confirm: "Are your sure?"} %>
+<!--We linked "Delete" to the helper that reroutes you within the application to the action of delete.
+  Since that helper is shared by multiple actions, we specify, we action we mean for it to belong to by "method: :delete"
+  The phrase tells what type of request we would like it to be. In this case, a DELETE request.
+ -->
